@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { Container, Row, Col } from 'reactstrap';
 
-const WorkoutIndex = (props) => {
+const ResIndex = (props) => {
     const [restaurants, setRestaurants] = useState([]);
     const [updateActive, setUpdateActive] = useState(false);
     const [restaurantToUpdate, setRestaurantToUpdate] = useState({});

@@ -12,6 +12,21 @@ import {
 
 const Sitebar = (props) => {
 console.log(props)
+
+const [logout, setLogout] = useState(true);
+
+    const logoutView = () => {
+        if(logout){
+            return (
+                null
+            )
+        } else {
+            return (
+                <Button onClick={props.clickLogout}>Logout</Button>
+            )
+        }
+    }
+
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => {
         let newIsOpen = !isOpen;
@@ -25,7 +40,7 @@ console.log(props)
             <Collapse isOpen={isOpen} navbar>
                 <Nav className="ml-auto" navbar>
                     <NavItem>
-                        <Button onClick={props.clickLogout}>Logout</Button>
+                        {logoutView()}
                     </NavItem>
                 </Nav>
             </Collapse>
