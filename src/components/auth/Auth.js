@@ -5,6 +5,7 @@ import Login from './Login';
 import './Auth.css';
 import dogPic from '../../assets/dog3.jpeg';
 
+
 const Auth = (props) => {
 
     const [signup, setSignup] = useState(false);

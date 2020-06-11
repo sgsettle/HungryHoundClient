@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { Container, Row, Col } from 'reactstrap';
+import APIURL from '../../helpers/environment';
 
 const ResIndex = (props) => {
     const [restaurants, setRestaurants] = useState([]);
@@ -7,7 +8,7 @@ const ResIndex = (props) => {
     const [restaurantToUpdate, setRestaurantToUpdate] = useState({});
     const fetchRestaurants = () => {
         console.log(props);
-        fetch('http://localhost:3000/log', {
+        fetch(`${APIURL}/log`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
