@@ -1,32 +1,33 @@
+Label {
+    font-family: 'Oswald';
+    font-weight: 500;
+    font-size: 23px;
+}
+
 input {
-    border: none;
-    border-radius: 5px;
-    background-color: lightgrey;
-    height: 40px;
-    width: 300px;
-    text-indent: 5px;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    font-size: 18px;
+    font-family: 'Oswald';
+    font-size: 20px;
+    background-color: lightgray;
+    width: 100%;
+    outline: none;
 }
 
 input:focus {
-    outline: none;
-    background-color: grey;
-    color: white;
+    background-color: lightcoral;
 }
 
-button {
+#loginButton {
     margin-top: 1em;
+    margin-left: 33%;
     border: none;
     height: 50px;
     width: 200px;
-    background-color: grey;
+    background-color: red;
     color: white;
     cursor: pointer;
     border-radius: 5px;
-}
-
-button:focus {
-    outline: none;
+    font-family: 'Oswald';
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
 }

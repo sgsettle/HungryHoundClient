@@ -29,13 +29,11 @@ const Auth = (props) => {
     }
 
     const switcher = () => {
-        return signup ? <p>Already a user? <a href="" onClick={toggleView}>Login</a></p> : <p>New user? <a href="" onClick={toggleView}>Signup</a></p>
+        return signup ? <p style={{fontFamily: 'Oswald', fontSize: '20px', justifyContent: "center", textAlign: "center"}} >Already a user? <a href="" onClick={toggleView}>Login</a></p> : <p style={{fontFamily: 'Oswald', fontSize: '20px', justifyContent: "center", textAlign: "center"}}>New user? <a href="" onClick={toggleView}>Signup</a></p>
     }
 
     return (
         <div>
-        
-        
         <Container className="auth-container" style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh'}}>
             <Row>
                 <Col md={5}>

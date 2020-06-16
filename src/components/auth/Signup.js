@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 import './Signup.css';
 import APIURL from '../../helpers/environment';
+import PetsIcon from '@material-ui/icons/Pets';
+
 
 const Signup = (props) => {
     const [firstName, setFirstName] = useState('');
@@ -31,23 +33,22 @@ const handleSubmit = (event) => {
             <br />
             <Form onSubmit={handleSubmit}>
             <FormGroup>
-                    <Label htmlFor="firstName">First Name</Label>
-                    <Input onChange={(e) => setFirstName(e.target.value)} placeholder={firstName === '' ? "First name is required" : null} name="firstName" value={firstName}/>
+                    <Label htmlFor="firstName"><PetsIcon fontSize="small" style={{color: "red"}}/>   First Name</Label>
+                    <input onChange={(e) => setFirstName(e.target.value)} placeholder={firstName === '' ? "First name is required" : null} name="firstName" value={firstName}/>
                 </FormGroup>
                 <FormGroup>
-                    <Label htmlFor="lastName">Last Name</Label>
-                    <Input onChange={(e) => setLastName(e.target.value)} placeholder={lastName === '' ? "Last name is required" : null} name="lastName" value={lastName}/>
+                    <Label htmlFor="lastName"><PetsIcon fontSize="small" style={{color: "red"}}/>   Last Name</Label>
+                    <input onChange={(e) => setLastName(e.target.value)} placeholder={lastName === '' ? "Last name is required" : null} name="lastName" value={lastName}/>
                 </FormGroup>
                 <FormGroup>
-                    <Label htmlFor="username">Username</Label>
-                    <Input onChange={(e) => setUsername(e.target.value)} placeholder={username === '' ? "Username is required" : null} name="username" value={username}/>
-                    {/* {username === '' ? "Username is required" : null} */}
+                    <Label htmlFor="username"><PetsIcon fontSize="small" style={{color: "red"}}/>   Username</Label>
+                    <input onChange={(e) => setUsername(e.target.value)} placeholder={username === '' ? "Username is required" : null} name="username" value={username}/>
                 </FormGroup>
                 <FormGroup>
-                    <Label htmlFor="password">Password</Label>
-                    <Input type="password" onChange={(e) => setPassword(e.target.value)} placeholder={password === '' ? "Password is required" : null} name="password" value={password}/>
+                    <Label htmlFor="password"><PetsIcon fontSize="small" style={{color: "red"}}/>   Password</Label>
+                    <input type="password" onChange={(e) => setPassword(e.target.value)} placeholder={password === '' ? "Password is required" : null} name="password" value={password}/>
                 </FormGroup>
-                <Button style={{alignItems: 'center'}} type="submit">Create Account</Button>
+                <button id="signinButton" style={{alignItems: 'center'}} type="submit">Create Account</button>
             </Form>
         </div>
     )

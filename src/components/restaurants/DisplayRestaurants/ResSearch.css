@@ -1,0 +1,33 @@
+#SearchArea {
+    margin-top: 20px;
+    padding: 10px;
+    margin-left: -40px;
+    /* outline: 2px solid black; */
+}
+
+#SearchBar {
+    width: 100%;
+}
+
+h4 {
+    text-align: center;
+    font-family: 'Oswald';
+    font-weight: 500;
+    font-size: 30px;
+}
+
+input {
+    font-family: 'Oswald';
+    font-size: 20px;
+    background-color: lightgray;
+}
+
+input:focus {
+    background-color: lightcoral;
+}
+
+ul {
+    margin-left: -15px;
+    font-family: "Oswald";
+    font-size: 20px;
+}

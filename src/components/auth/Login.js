@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {Form, FormGroup, Label, Input, Button} from 'reactstrap';
 import './Login.css';
 import APIURL from '../../helpers/environment';
+import PetsIcon from '@material-ui/icons/Pets';
 
 
 const Login = (props) => {
@@ -9,6 +10,7 @@ const Login = (props) => {
     const [password, setPassword] = useState('');
 
     const handleSubmit = (event) => {
+        console.log(username, password);
         event.preventDefault();
         fetch(`${APIURL}/user/login`, {
             method: 'POST',
@@ -28,14 +30,16 @@ const Login = (props) => {
             <h1 style={{display: 'flex', justifyContent: 'center', alignItems: 'center', fontFamily: 'Oswald', color: 'red'}}>Login</h1>
             <Form onSubmit={handleSubmit}>
                 <FormGroup>
-                    <Label htmlFor="username">Username</Label>
-                    <Input onChange={(e) => setUsername(e.target.value)} placeholder={username === '' ? "Username is required" : null} name="username" value={username}/>
+                    <Label htmlFor="username"><PetsIcon fontSize="small" style={{color: "red"}}/>   Username</Label>
+                    <br />
+                    <input onChange={(e) => setUsername(e.target.value)} placeholder={username === '' ? "Username is required" : null} name="username" value={username}/>
                 </FormGroup>
                 <FormGroup>
-                    <Label htmlFor="password">Password</Label>
-                    <Input type="password" onChange={(e) => setPassword(e.target.value)} placeholder={password === '' ? "Password is required" : null} name="password" value={password}/>
+                    <Label htmlFor="password"><PetsIcon fontSize="small" style={{color: "red"}}/>   Password</Label>
+                    <br />
+                    <input type="password" onChange={(e) => setPassword(e.target.value)} placeholder={password === '' ? "Password is required" : null} name="password" value={password}/>
                 </FormGroup>
-                <Button style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}} type="submit">Login</Button>
+                <button id="loginButton" type="submit">Login</button>
             </Form>
         </div>
     )

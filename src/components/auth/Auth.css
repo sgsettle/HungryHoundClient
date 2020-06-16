@@ -5,3 +5,12 @@
     margin-left: ($spacer* .25) !important;
     float: right;
 } */
+
+/* #dogPic {
+    margin-top: 60px;
+    border-radius: 30%;
+    height: 400px;
+    /* margin-left: -500px; */
+/* } */ 
+
+/* style={{position: 'relative', display: 'inline-flex', borderRadius: '30%', height: '400px', width: '100%'}} */

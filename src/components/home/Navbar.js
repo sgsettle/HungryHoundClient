@@ -9,23 +9,25 @@ import {
     Nav,
   } from "reactstrap";
   import logo from '../../assets/HungryHoundLogo.png';
+  import './Navbar.css';
+
 
 const Sitebar = (props) => {
 console.log(props)
 
 const [logout, setLogout] = useState(true);
 
-    const logoutView = () => {
-        if(logout){
-            return (
-                null
-            )
-        } else {
-            return (
-                <Button onClick={props.clickLogout}>Logout</Button>
-            )
-        }
-    }
+    // const logoutView = () => {
+    //     if(logout){
+    //         return (
+                
+    //         )
+    //     } else {
+    //         return (
+    //             <button id="logoutButton" onClick={props.clickLogout}>Logout</button>
+    //         )
+    //     }
+    // }
 
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => {
@@ -35,12 +37,13 @@ const [logout, setLogout] = useState(true);
     
     return (
         <Navbar color="faded" light expand="md">
-            <NavbarBrand href="/"><img style={{height: '60px', width: '200px'}} id="logo" src={logo} alt="HHLogo" /></NavbarBrand>
+            <NavbarBrand href="/"><img style={{height: '70px', width: '220px'}} id="logo" src={logo} alt="HHLogo" /></NavbarBrand>
             <NavbarToggler onClick={toggle} />
             <Collapse isOpen={isOpen} navbar>
                 <Nav className="ml-auto" navbar>
                     <NavItem>
-                        {logoutView()}
+                        {/* {logoutView()} */}
+                        <button id="logoutButton" onClick={props.clickLogout}>Logout</button>
                     </NavItem>
                 </Nav>
             </Collapse>
