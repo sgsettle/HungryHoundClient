@@ -45,12 +45,12 @@ const handleSubmit = (event) => {
                 <FormGroup>
                     <Label htmlFor="username"><PetsIcon fontSize="small" style={{color: "red"}}/>   Username</Label>
                     <br />
-                    <input onChange={(e) => setUsername(e.target.value)} placeholder={username === '' ? "Username is required" : null} name="username" value={username}/>
+                    <input onChange={(e) => setUsername(e.target.value)} placeholder={username === '' ? "Username is required" : null} type="text" name="username" pattern="[a-zA-Z0-9]+{4,}" required value={username}/>
                 </FormGroup>
                 <FormGroup>
                     <Label htmlFor="password"><PetsIcon fontSize="small" style={{color: "red"}}/>   Password</Label>
                     <br />
-                    <input type="password" onChange={(e) => setPassword(e.target.value)} placeholder={password === '' ? "Password is required" : null} name="password" value={password}/>
+                    <input type="password" onChange={(e) => setPassword(e.target.value)} placeholder={password === '' ? "Password is required" : null} name="password" pattern="[a-zA-Z0-9]+{5,}" required value={password}/>
                 </FormGroup>
                 <button id="signinButton" style={{alignItems: 'center'}} type="submit">Create Account</button>
             </Form>
