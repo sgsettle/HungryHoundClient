@@ -40,7 +40,7 @@ const Login = (props) => {
                     <input type="password" onChange={(e) => setPassword(e.target.value)} placeholder={password === '' ? "Password is required" : null} name="password" pattern="[a-zA-Z0-9].{5,}" required value={password} title="Password must be at least 5 characters and contain at least 1 number" />
                 </FormGroup>
                 <button id="loginButton" type="submit">Login</button>
-            </Form>
+            </Form>  
         </div>
     )
 }
