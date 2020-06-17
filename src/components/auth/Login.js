@@ -26,7 +26,7 @@ const Login = (props) => {
     }
 
     return (
-        <div>
+        <div className="loginDiv">
             <h1 style={{display: 'flex', justifyContent: 'center', alignItems: 'center', fontFamily: 'Oswald', color: 'red'}}>Login</h1>
             <Form onSubmit={handleSubmit}>
                 <FormGroup>

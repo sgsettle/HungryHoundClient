@@ -1,0 +1,36 @@
+/* #commentArea {
+    height: 45px !important;
+} */
+
+#editHeader {
+    text-align: center;
+    justify-content: center;
+    font-family: 'Oswald';
+    font-weight: 500;
+    font-size: 80px;
+}
+
+#editLabel {
+    font-family: 'Oswald';
+    font-size: 18px;
+}
+
+#editComment {
+    font-family: 'Oswald';
+}
+
+#editButton {
+    margin-top: 1em;
+    margin-left: 30%;
+    border: none;
+    height: 50px;
+    width: 200px;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: 'Oswald';
+    font-size: 18px;
+    justify-content: center;
+    align-items: center;
+}

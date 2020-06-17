@@ -1,0 +1,18 @@
+Table {
+    table-layout: fixed;
+    /* width: 200px; */
+}
+
+th {
+    font-family: 'Oswald';
+    font-size: 19px;
+    text-align: center;
+
+}
+
+td {
+    font-family: 'Oswald';
+    font-size: 18px;
+    text-align: center;
+}
+

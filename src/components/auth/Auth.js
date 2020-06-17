@@ -8,7 +8,7 @@ import dogPic from '../../assets/dog3.jpeg';
 
 const Auth = (props) => {
 
-    const [signup, setSignup] = useState(false);
+    const [signup, setSignup] = useState(true);
 
     const handleView = () => {
         if(signup){
@@ -33,14 +33,14 @@ const Auth = (props) => {
     }
 
     return (
-        <div>
+        <div className="authDiv">
+        <img id="dogPic" src={dogPic} alt="dog" />
         <Container className="auth-container" style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh'}}>
+        
+        <br />
             <Row>
-                <Col md={5}>
-                <img style={{position: 'relative', display: 'inline-flex', borderRadius: '30%', height: '400px', width: '100%'}} id="dogPic" src={dogPic} alt="dog" />
-                </Col>
                 <br />
-                <Col md={7}>
+                <Col md={12}>
                     {handleView()}
                     <br />
                     {switcher()}

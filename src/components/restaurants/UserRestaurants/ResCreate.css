@@ -1,0 +1,39 @@
+#CreateDiv {
+    display: inline-flex;
+    flex-direction: row;
+    margin-top: 20px;
+    padding: 10px;
+    width: 100%;
+}
+
+#createHeader {
+    margin-bottom: 18px;
+}
+
+#restaurantForm {
+    width: 100%;
+    align-items: center;
+}
+
+#createComment {
+    width: 100%;
+    height: 85px;
+    font-family: 'Oswald';
+    color: darkslategrey;
+    border-color: lightgray;
+}
+
+#CreateButton {
+    border: none;
+    height: 50px;
+    width: 105px;
+    margin-left: 36%;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: 'Oswald';
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+}

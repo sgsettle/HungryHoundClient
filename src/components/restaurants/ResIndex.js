@@ -4,6 +4,9 @@ import APIURL from '../../helpers/environment';
 import eatingDog from '../../assets/dog1.jpeg';
 import styled from 'styled-components';
 import ResSearch from './DisplayRestaurants/ResSearch';
+import ResCreate from './UserRestaurants/ResCreate';
+import ResTable from './UserRestaurants/ResTable';
+import ResEdit from './UserRestaurants/ResEdit';
 
 
 const ResIndex = (props) => {
@@ -59,11 +62,17 @@ const Resize = styled.img`
                     <Col md='6'>
                         <ResSearch token={props.token}/>
                     </Col>
-                </Row>
-                <Row>
-                    <Col md='3'>
-
+                    <Col md='6'>
+                        <ResCreate fetchRestaurants={fetchRestaurants} token={props.token} />
                     </Col>
+                </Row>
+                <br />
+                <br />
+                <Row>
+                    <Col md='12'>
+                        <ResTable restaurants={restaurants} editUpdateRestaurant={editUpdateRestaurant} updateOn={updateOn} fetchRestaurants={fetchRestaurants} token={props.token} />
+                    </Col>
+                    {updateActive ? <ResEdit restaurantToUpdate={restaurantToUpdate} updateOff={updateOff} token={props.token} fetchRestaurants={fetchRestaurants}/> : <></>}
                 </Row>
             </Container>
         </div>

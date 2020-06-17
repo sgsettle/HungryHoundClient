@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import {Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody} from 'reactstrap';
 import APIURL from '../../../helpers/environment';
+import './ResEdit.css';
+import PetsIcon from '@material-ui/icons/Pets';
 
 const ResEdit = (props) => {
     const [editRestaurantName, setEditRestaurantName] = useState(props.restaurantToUpdate.restaurantName);
@@ -12,7 +14,7 @@ const ResEdit = (props) => {
         event.preventDefault();
         fetch(`${APIURL}/wish/${props.restaurantToUpdate.id}`, {
             method: 'PUT',
-            body: JSON.stringify({wish: {restaurantName: restaurantName, address: address, foodType: foodType, comment: comment}}),
+            body: JSON.stringify({wish: {restaurantName: editRestaurantName, address: editAddress, foodType: editFoodType, comment: editComment}}),
             headers: new Headers({
                 'Content-Type': 'application/json',
                 'Authorization': props.token
@@ -26,25 +28,26 @@ const ResEdit = (props) => {
 
     return(
         <Modal isOpen={true}>
-            <ModalHeader>Add New Restaurant</ModalHeader>
+            <ModalHeader id="editHeader" ><PetsIcon fontSize="small" style={{color: "red"}}/>   Edit Your Restaurant   <PetsIcon fontSize="small" style={{color: "red"}}/></ModalHeader>
             <ModalBody>
                 <Form onSubmit={restaurantUpdate}>
                     <FormGroup>
-                        <Label htmlFor="restaurantName">Restaurant Name:</Label>
+                        <Label id="editLabel" htmlFor="restaurantName">Restaurant Name:</Label>
                         <Input name="restaurantName" value={editRestaurantName} onChange={(e) => setEditRestaurantName(e.target.value)}/>
                     </FormGroup>
                     <FormGroup>
-                    <Label htmlFor="address">Address:</Label>
+                    <Label id="editLabel" htmlFor="address">Address:</Label>
                         <Input name="address" value={editAddress} onChange={(e) => setEditAddress(e.target.value)}/>
                     </FormGroup>
                     <FormGroup>
-                    <Label htmlFor="foodType">Type of Food:</Label>
+                    <Label id="editLabel" htmlFor="foodType">Type of Food:</Label>
                         <Input name="foodType" value={editFoodType} onChange={(e) => setEditFoodType(e.target.value)} />
                     </FormGroup>
-                    <Label htmlFor="comment">Comments:</Label>
-                        <Input name="comment" value={editComment} onChange={(e) => setEditComment(e.target.value)} />
+                    <FormGroup>
+                    <Label id="editLabel" htmlFor="comment">Comments:</Label>
+                        <textarea class="form-control" id="editComment" name="comment" value={editComment} onChange={(e) => setEditComment(e.target.value)} />
                     </FormGroup>
-                    <Button type="submit">Update Your Restaurant!</Button>
+                    <Button id="editButton" type="submit">Update Your Restaurant!</Button>
                 </Form>
             </ModalBody>
         </Modal>

@@ -5,12 +5,23 @@
     margin-left: ($spacer* .25) !important;
     float: right;
 } */
+.authDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: -30px;
+    margin-left: 80px;
+}
 
-/* #dogPic {
-    margin-top: 60px;
+#dogPic {
+    position: static;
+    display: inline-flex;
+    margin-top: 80px;
     border-radius: 30%;
     height: 400px;
     /* margin-left: -500px; */
-/* } */ 
+    /* width: 100%; */
+}
 
 /* style={{position: 'relative', display: 'inline-flex', borderRadius: '30%', height: '400px', width: '100%'}} */

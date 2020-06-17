@@ -1,9 +1,15 @@
 import React from 'react';
 import {Table, Button} from 'reactstrap';
+import APIURL from '../../../helpers/environment';
+import './ResTable.css';
+
+import PetsIcon from '@material-ui/icons/Pets';
+import EditIcon from '@material-ui/icons/Edit';
+import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 
 const ResTable = (props) => {
     const deleteRestaurant = (restaurant) => {
-        fetch(`${APIURL}/log/${restaurant.id}`, {
+        fetch(`${APIURL}/wish/${restaurant.id}`, {
             method: 'DELETE',
             headers: new Headers({
                 'Content-Type': 'application/json',
@@ -14,7 +20,7 @@ const ResTable = (props) => {
     }
 
     const restaurantMapper = () => {
-        return props.restaurants.log.map((restaurant, index) => {
+        return props.restaurants.wish.map((restaurant, index) => {
             return(
                 <tr key={index}>
                     {/* <th scope="row">{restaurant.id}</th> */}
@@ -23,8 +29,8 @@ const ResTable = (props) => {
                     <td>{restaurant.foodType}</td>
                     <td>{restaurant.comment}</td>
                     <td>
-                        <Button color="warning" onClick={() => {props.editUpdateRestaurant(restaurant); props.updateOn()}}>Update</Button>
-                        <Button color="danger" onClick={() => {deleteRestaurant(restaurant)}}>Delete</Button>
+                        <EditIcon style={{color: "grey"}} onClick={() => {props.editUpdateRestaurant(restaurant); props.updateOn()}} />
+                        <DeleteForeverIcon style={{color: "red"}} onClick={() => {deleteRestaurant(restaurant)}} />
                     </td>
                 </tr>
             )
@@ -33,7 +39,7 @@ const ResTable = (props) => {
 
     return(
         <>
-        <h3>Your Restaurants:</h3>
+        <h4><PetsIcon fontSize="small" style={{color: "red"}}/>   Your Restaurants:</h4>
         <hr />
         <Table striped>
             <thead>
@@ -42,6 +48,7 @@ const ResTable = (props) => {
                     <th>Address</th>
                     <th>Food Type</th>
                     <th>Comment</th>
+                    <th>Update/Delete</th>
                 </tr>
             </thead>
             <tbody>

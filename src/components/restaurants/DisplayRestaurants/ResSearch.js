@@ -20,7 +20,6 @@ const ResSearch  = (props) => {
             }
         }).then( (res) => res.json())
         .then((logData) => {
-            // setRestaurants(logData)
             setRestaurants(logData.log);
             console.log(logData.log);
         })
@@ -54,8 +53,7 @@ const ResSearch  = (props) => {
             placeholder="Search by Restaurant Name or Food Type"
             value={searchTerm}
             onChange={handleChange} />
-            {/* <Button type="submit" onClick={setSearchResults} >Search</Button> */}
-            <Container>
+            <Container id="searchContainer">
                 {searchResults.map(item => (
                 <ul style={{textAlign: "left"}} >
                     <li style={{listStyleType: "none"}}><PetsIcon fontSize="small" style={{color: "red"}}/>  {item.restaurantName}</li>
