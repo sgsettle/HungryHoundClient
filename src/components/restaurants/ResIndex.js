@@ -7,6 +7,7 @@ import ResSearch from './DisplayRestaurants/ResSearch';
 import ResCreate from './UserRestaurants/ResCreate';
 import ResTable from './UserRestaurants/ResTable';
 import ResEdit from './UserRestaurants/ResEdit';
+import Footer from '../home/Footer';
 
 
 const ResIndex = (props) => {
@@ -73,6 +74,12 @@ const Resize = styled.img`
                         <ResTable restaurants={restaurants} editUpdateRestaurant={editUpdateRestaurant} updateOn={updateOn} fetchRestaurants={fetchRestaurants} token={props.token} />
                     </Col>
                     {updateActive ? <ResEdit restaurantToUpdate={restaurantToUpdate} updateOff={updateOff} token={props.token} fetchRestaurants={fetchRestaurants}/> : <></>}
+                </Row>
+                <br />
+                <Row>
+                    <Col md='12'>
+                        <Footer />
+                    </Col>
                 </Row>
             </Container>
         </div>
